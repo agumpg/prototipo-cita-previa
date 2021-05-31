@@ -1,0 +1,68 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import "~@angular/material/theming";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+$cemi-primary: (
+  50: #e0ecef,
+  100: #b3cfd8,
+  200: #80afbe,
+  300: #4d8ea4,
+  400: #267691,
+  500: #005e7d,
+  600: #005675,
+  700: #004c6a,
+  800: #004260,
+  900: #00314d,
+  A100: #80c7ff,
+  A200: #4db0ff,
+  A400: #1a9aff,
+  A700: #018eff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #ffffff,
+    A700: #ffffff,
+  ),
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$prototipo-cita-previa-primary: mat-palette($cemi-primary);
+$prototipo-cita-previa-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$prototipo-cita-previa-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$prototipo-cita-previa-theme: mat-light-theme(
+  (
+    color: (
+      primary: $prototipo-cita-previa-primary,
+      accent: $prototipo-cita-previa-accent,
+      warn: $prototipo-cita-previa-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($prototipo-cita-previa-theme);

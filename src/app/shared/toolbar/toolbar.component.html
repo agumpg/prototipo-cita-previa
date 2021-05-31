@@ -1,0 +1,27 @@
+<mat-toolbar color="primary"
+             class="navbar mat-elevation-z6">
+
+    <img src="assets/img/logo_ayto_malaga.png"
+         alt="Logotipo Ayuntamiento de Málaga">
+
+    <button mat-button
+            class="d-none d-md-block">El Ayuntamiento</button>
+    <button mat-button
+            class="d-none d-md-block">La Ciudad</button>
+    <button mat-button
+            class="d-none d-md-block">Sede Electrónica</button>
+
+
+    <div class="flex-spacer"></div>
+
+    <button mat-button
+            [matMenuTriggerFor]="menu">CITA PREVIA
+        <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>Pedir Nueva Cita</button>
+        <button mat-menu-item>Consultar Mis Citas</button>
+        <button mat-menu-item>Anular Cita Reservada</button>
+    </mat-menu>
+
+</mat-toolbar>
